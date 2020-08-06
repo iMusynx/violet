@@ -33,7 +33,7 @@ jobs:
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: Users/runner/work/violet/violet/build/ios/iphoneos/
+        file: /Users/runner/work/violet/violet/build/ios/iphoneos/
         asset_name: Runner.app
         tag: ${{ github.ref }}
         overwrite: true
