@@ -29,3 +29,12 @@ jobs:
     - run: flutter pub get
     - run: flutter test
     - run: flutter build ios --release --no-codesign
+    - name: Upload binaries to release
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: /Users/runner/work/violet/violet/build/ios/iphoneos/Runner.app
+        asset_name: Runner.app
+        tag: ${{ github.ref }}
+        overwrite: true
+        body: "This is my release text"
